@@ -3,7 +3,7 @@
 PROFILE=$1
 OSCODE=$2
 
-if [ x${PROFILE} = x ]; then
+if [ -z ${PROFILE} ]; then
     echo "Usage: $0 PROFILE [oscode]" 1>&2;
     exit 1
 fi
@@ -13,7 +13,7 @@ if [ ! -e profiles/${PROFILE}.conf ]; then
     exit 1
 fi
 
-if [ x${OSCODE} = x ]; then
+if [ -z ${OSCODE} ]; then
   OSCODE=`lsb_release -c | awk '{print $2}'`
   echo "Defaulted OSCODE to ${OSCODE}"
 fi
