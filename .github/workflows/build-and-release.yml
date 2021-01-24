@@ -13,8 +13,8 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y simple-cdd xorriso
 
-      - name: Build image for APU
-        run: ./build apu64
+      - name: Build buster image for APU
+        run: ./build apu64 buster
 
       - name: Create Release
         id: create_release
