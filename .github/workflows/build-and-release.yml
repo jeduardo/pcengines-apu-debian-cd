@@ -5,13 +5,13 @@ on:
 jobs:
   build_and_publish:
     name: Build a Debian image and makes a release out of it.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: sudo apt-get install -y simple-cdd xorriso debian-keyring
+        run: sudo apt-get install -y simple-cdd xorriso debian-archive-keyring
 
       - name: Build buster image for APU
         run: ./build apu64 buster
